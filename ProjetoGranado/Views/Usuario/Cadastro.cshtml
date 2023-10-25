@@ -1,0 +1,108 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active''"><a href="#">Cadastro de Usuarios</a></li>
+    </ol>
+</nav>
+
+<div style="float:right; margin-bottom:1%">
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Lista", "Usuario")'"><< Voltar</button>
+</div>
+<br />
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom01">Nome</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Nome" value="Mark" required>
+            <div class="valid-feedback">
+                Tudo certo!
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom02">CPF</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="CPF" value="000.000.000-00" required>
+            <div class="valid-feedback">
+                Tudo certo!
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            @*form-group col-md-3*@
+            <label for="LabelGrupoUsuario">Grupo de Usuário</label>
+            <select id="inputGrupoUsuario" class="form-control">
+                <option selected>Escolher...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom02">Email</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Email" value="Nome@nome.com.br" required>
+            <div class="valid-feedback">
+                Tudo certo!
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom03">Ativo</label>
+            <div class="toggle">
+                <input type="checkbox" id="foo">
+                <label for="foo"></label>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom04">Sexo</label>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="RadioMasculino" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">M</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="RadioFeminino" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">F</label>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Telefone</label>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Telefone" required>
+            <div class="invalid-feedback">
+                Por favor, informe um Telefone válido.
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Setor</label>
+            <select id="inputGrupoUsuario" class="form-control">
+                <option selected>Escolher...</option>
+                <option>...</option>
+            </select>
+            <div class="invalid-feedback">
+                Por favor, informe um Setor.
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit">Enviar</button>
+</form>
+
+<script>
+    // Exemplo de JavaScript inicial para desativar envios de formulário, se houver campos inválidos.
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Pega todos os formulários que nós queremos aplicar estilos de validação Bootstrap personalizados.
+            var forms = document.getElementsByClassName('needs-validation');
+            // Faz um loop neles e evita o envio
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>

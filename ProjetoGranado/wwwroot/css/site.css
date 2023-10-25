@@ -1,0 +1,131 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.menu-principal {
+    background-color: #0E5638;
+    color: #FFF;
+}
+
+    .menu-principal > a:link {
+        color: #FFF;
+    }
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    /*  background-color: #1b6ec2;
+  border-color: #1861ac;*/
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.toggle > input {
+    display: none;
+}
+
+.toggle > label {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 44px;
+    background: #898989;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .toggle > label:after {
+        position: absolute;
+        left: -2px;
+        top: -3px;
+        display: block;
+        width: 26px;
+        height: 26px;
+        border-radius: 100px;
+        background: #fff;
+        box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+        content: '';
+        transition: all 0.3s ease;
+    }
+
+    .toggle > label:active:after {
+        transform: scale(1.15, 0.85);
+    }
+
+.toggle > input:checked ~ label {
+    background: #6fbeb5;
+}
+
+    .toggle > input:checked ~ label:after {
+        left: 20px;
+        background: #179588;
+    }
+
+.toggle > input:disabled ~ label {
+    background: #d5d5d5;
+    pointer-events: none;
+}
+
+    .toggle > input:disabled ~ label:after {
+        background: #bcbdbc;
+    }
