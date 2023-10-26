@@ -3,5 +3,291 @@
 *@
 @{
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h4>Login</h4>
+<!-- Mirrored from telatkaya.com/stagb/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 13 Sep 2017 13:16:04 GMT -->
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport" />
+
+    <!-- Site Properities -->
+    <meta name="generator" content="Visual Studio 2015" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Chute Certo - Seu site divertido de apostas online" />
+    <meta name="keywords" content="Site, bolão, aposta, diversão, resultados, jogos, brasileirão, futebol" />
+    <link href="~/stagb/dist/semantic.min.css" rel="stylesheet" />
+    <link href="~/stagb/css/main.css" rel="stylesheet" />
+    <link href="~/Content/base.css" rel="stylesheet" />
+
+    <script src="~/stagb/js/jquery-2.1.4.min.js"></script>
+    <script src="~/stagb/dist/semantic.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+    <script src="~/Scripts/Login/login.js"></script>
+</head>
+
+<body>
+    <div class="ui container" style="padding-top:5%">
+        <div class="ui grid center aligned">
+            <div class="row">
+                <div class="sixteen wide tablet six wide computer column">
+                    <div class="ui left aligned segment">
+                        <div id="frmLogin" class="ui form">
+                            <div class="ui container center aligned">
+                                <div class="ui segment">
+                                    <img src="~/img/logoG.jpg">
+                                </div>
+                            </div>
+
+                            <div class="field" style="margin-top:3%">
+                                <div id="mensagemLogin" class="ui warning message"></div>
+
+                                <label>Apelido/E-mail:</label>
+
+                                <div class="ui fluid icon input">
+                                    <input name="user_name" id="txtApelido-Email" style="width:100% !important; min-width:100%">
+                                    <i class="icon user"></i>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label>Senha:</label>
+                                <div class="ui fluid icon input">
+
+                                    <input name="password" id="txtSenha" type="password" style="width:100% !important; min-width:100%">
+                                    <i class="icon key"></i>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <button id="login" class="ui teal right labeled icon button fluid" type="button" onclick="login()">
+                                    Login<i class="icon sign in"></i>
+                                </button>
+
+                                <button class="ui blue right labeled icon button fluid" type="button" onclick="modalCadastro()">
+                                    Cadastre-se<i class="icon add user"></i>
+                                </button>
+
+                                <button class="ui red right labeled icon button fluid" type="button" onclick="modalEsqueciSenha()">
+                                    Esqueci a senha<i class="icon spy"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal de Cadastro*@
+    <div id="modalCadastro" class="ui small modal">
+        <div class="header">
+            <h4><i class="icon add user"></i> Formulário de Cadastro</h4>
+        </div>
+
+
+        <div class="content">
+            <form id="frmCadastro" class="ui form">
+                <div class="ui grid stackable">
+                    <div class="sixteen wide column">
+                        <div id="mensagem" class="ui warning message"></div>
+                    </div>
+
+                    <input id="Id" type="hidden" name="Id" value="0">
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Nome" class="control-label">Nome *</label>
+                            <input id="usuario_Nome" type="text" name="Nome" placeholder="Informe seu Nome">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Apelido" class="control-label">Apelido *</label>
+                            <input id="usuario_Apelido" type="text" name="Apelido" placeholder="Informe seu Apelido">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Celular" class="control-label">Telefone/Celular *</label>
+                            <input id="usuario_Celular" class="celular" type="text" name="Celular" placeholder="(00)90000-0000">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Nascimento" class="control-label">Data de Nascimento *</label>
+                            <input id="usuario_Nascimento" class="nascimento" type="date" name="Nascimento">
+                        </div>
+                    </div>
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Pessoa">Tipo de Pessoa:</label>
+                            <select id="usuario_Pessoa" name="TipoPessoa" class="tPessoa">
+                                <option value="tipoPessoa">Selecione o Tipo de Pessoa</option>
+                                <option value="fisica">Física</option>
+                                <option value="juridica">Jurídica</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field mostraCpf" style="display: none;">
+                            <label for="usuario_Cpf" class="control-label">CPF *</label>
+                            <input id="usuario_Cpf" class="cpf" type="text" name="Cpf" placeholder="Digite o CPF" maxlength="14" data-mask-cpf>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field mostraCnpj" style="display: none;">
+                            <label for="usuario_Cnpj" class="control-label">CNPJ</label>
+                            <input id="usuario_Cnpj" class="cnpj" type="text" name="Cnpj" placeholder="Digite o CNPJ" maxlength="18" data-mask-cnpj>
+                        </div>
+                    </div>
+
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Genero" class="control-label">Gênero * </label>
+                            <select id="usuario_Genero" class="genero" name="Genero" required>
+                                <option value="">Selecione o Gênero</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Cep" class="control-label">CEP *</label>
+                            <input id="usuario_Cep" class="cep" type="text" name="Cep" onblur="consultarEndereco()">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Endereco" class="control-label">Endereço *</label>
+                            <input id="usuario_Endereco" class="logradouro" type="text" name="Logradouro" readonly>
+                        </div>
+                    </div>
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Numero" class="control-label">Número * </label>
+                            <input id="usuario_Numero" class="numero" type="text" name="Numero">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Complemento" class="control-label">Complemento</label>
+                            <input id="usuario_Complemento" class="complemento" type="text" name="Complemento">
+                        </div>
+                    </div>
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Pais" class="control-label">País * </label>
+                            <input id="usuario_Pais" class="pais" type="text" name="Pais" readonly>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Estado" class="control-label">Estado * </label>
+                            <input id="usuario_Estado" class="estado" type="text" name="Estado" readonly>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Cidade" class="control-label">Cidade * </label>
+                            <input id="usuario_Cidade" class="localidade" type="text" name="Localidade" readonly>
+                        </div>
+                    </div>
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Bairro" class="control-label">Bairro * </label>
+                            <input id="usuario_Bairro" class="bairro" type="text" name="Bairro" readonly>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Email" class="control-label">E-mail *</label>
+                            <input id="usuario_Email" type="email" name="Email" placeholder="Informe seu E-mail">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_Senha" class="control-label">Senha *</label>
+                            <input id="usuario_Senha" type="password" name="Senha" placeholder="Informe sua Senha">
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="field">
+                            <label for="usuario_SenhaConfirma" class="control-label">Confirmar Senha *</label>
+                            <input id="usuario_SenhaConfirma" type="password" name="SenhaConfirma" placeholder="Confirme sua Senha">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="actions">
+            <div class="ui buttons">
+                <button id="btnCadastrarUsuario" type="button" class="ui primary button" onclick="validaCadastro()">Cadastrar</button>
+                <button type="button" class="ui cancel button">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+    @*Modal Esqueci a Senha*@
+    <div id="modalEsqueciSenha" class="ui small modal">
+        <div class="header">
+            <h4><i class="icon key"></i> Recuperar Senha</h4>
+        </div>
+
+        <div class="content">
+            <div id="frmEsqueceuSenha" class="ui form">
+                <div class="ui grid stackable">
+                    <div class="sixteen wide column">
+                        <div id="mensagemSenha" class="ui warning message"></div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <label for="emailRecuperacao">E-mail *</label>
+                        <input id="emailRecuperacao" type="email" placeholder="Informe seu e-mail" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <div class="ui buttons">
+                <button id="btnRecuperarSenha" type="button" class="ui primary button" onclick="recuperarSenha()">Enviar</button>
+                <button type="button" class="ui cancel button">Voltar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

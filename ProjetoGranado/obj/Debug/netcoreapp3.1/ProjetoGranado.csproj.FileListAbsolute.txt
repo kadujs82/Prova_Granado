@@ -83,3 +83,4 @@ C:\projetos\ProjetoGranado\ProjetoGranado\obj\Debug\netcoreapp3.1\ProjetoGranado
 C:\projetos\ProjetoGranado\ProjetoGranado\obj\Debug\netcoreapp3.1\ProjetoGranado.genruntimeconfig.cache
 C:\projetos\ProjetoGranado\ProjetoGranado\obj\Debug\netcoreapp3.1\ProjetoGranado.csproj.CopyComplete
 C:\projetos\ProjetoGranado\ProjetoGranado\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\projetos\ProjetoGranado\ProjetoGranado\obj\Debug\netcoreapp3.1\Razor\Views\Login\AlterarSenha.cshtml.g.cs

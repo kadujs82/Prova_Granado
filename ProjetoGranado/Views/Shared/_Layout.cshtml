@@ -25,7 +25,7 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Configurações</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Index">Usuários</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Lista">Usuários</a>
                         </li>
                     </ul>
                 </div>
@@ -36,13 +36,11 @@
                     </svg> *@
                     <ul class="nav nav-pills">
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle text-light" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Nome do User</a>
+                          @**@  <a class="dropdown-toggle text-light" data-toggle="dropdown" href="#" role="button" aria-expanded="false">Nome do User</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Sair</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="login" asp-action="AlterarSenha">Alterar Senha</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
+                                <a class="dropdown-item" asp-area="" asp-controller="Login" asp-action="Index">Sair</a>
                             </div>
                         </li>
                       

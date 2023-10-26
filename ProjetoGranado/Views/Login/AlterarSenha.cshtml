@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active''"><a href="#">Alterar Senha</a></li>
+    </ol>
+</nav>
+<br />
+<form class="needs-validation" novalidate>
+    <div class="form-row">
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom01">Senha</label>
+            <input type="password" class="form-control" id="validationCustom01" placeholder="Senha" value="" required>
+            <div class="invalid-feedback">
+                Preencha o campo Senha
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom02">Nova Senha</label>
+            <input type="password" class="form-control" id="validationCustom02" placeholder="Nova Senha" value="" required>
+            <div class="invalid-feedback">
+                Preencha o campo Nova Senha
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="validationCustom03">Confirma Senha</label>
+            <input type="password" class="form-control" id="validationCustom03" placeholder="Repita Nova Senha" value="" required>
+            <div class="invalid-feedback">
+                Preencha o campo Confirma Senha
+            </div>
+        </div>
+
+    </div>
+    <button class="btn btn-success" type="submit">Alterar Senha</button>
+</form>

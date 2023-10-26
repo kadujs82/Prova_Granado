@@ -12,5 +12,10 @@ namespace ProjetoGranado.Controllers
         {
             return View();
         }
+
+        public IActionResult AlterarSenha()
+        {
+            return View();
+        }
     }
 }
